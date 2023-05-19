@@ -41,11 +41,14 @@ TXS0108EPW 20TSSOP                 | 3 | Bidirectional level-shifters 3.3V/5V
 2x6 2.54mm Male Pin Headers        | 1 | For the IRQ selection
 2.54mm Jumper                      | 1 | For the IRQ selection
 0.1uF 1206 SMD capacitors          | 6 | Decoupling capacitors for the ICs C1-6
-2.2K through-hole resistor 1/8W    | 2 |
-3.3K through-hole resistor 1/8W    | 2 |
+2.2K through-hole resistor 1/8W    | 2 | * Better to leave them unpopulated: See "Known Issues" below
+3.3K through-hole resistor 1/8W    | 2 | * Better to leave them unpopulated: See "Known Issues" below
 1uF through-hole ceramic capacitor | 1 | Smoothing capacitor for the board.
 Horizontal Female USB connector    | 1 | For plugging in a USB device.
 3-4cm short jumper wires           | 2 | For connecting Pico's TP2,TP3 pads to the PCB's pads for the on-bard USB connector
 
 
-
+# Known Issues
+- Rev0.1 connects MEMR and MEMW to voltage dividers which are made up by the 2.2K and 3.3K through-hole resistors.
+  The voltage dividers can cause issues on some motherboards, so it is better to leave them unpopulated.
+  This will be fixed in a later revision of the board.
